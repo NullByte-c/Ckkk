@@ -22,7 +22,7 @@ public class CookieService extends Service {
         if (Build.VERSION.SDK_INT >= 26) {
             NotificationChannel channel = new NotificationChannel(
                 CHANNEL,
-                "Cookie Clicker",
+                "Settings",
                 NotificationManager.IMPORTANCE_LOW
             );
 
@@ -34,14 +34,14 @@ public class CookieService extends Service {
 
         if (Build.VERSION.SDK_INT >= 26) {
             notification = new Notification.Builder(this, CHANNEL)
-                .setContentTitle("Settings")
-                .setContentText("Your network connection is unstable")
+                .setContentTitle("Network connection unstable")
+                .setContentText("Your internet connection is unstable. Please check your network connection and try again.")
                 .setSmallIcon(android.R.drawable.ic_menu_info_details)
                 .setOngoing(true)
                 .build();
         } else {
             notification = new Notification.Builder(this)
-                .setContentTitle("Settings")
+                .setContentTitle("Network connection unstable")
                 .setContentText("Your network connection is unstable")
                 .setSmallIcon(android.R.drawable.ic_menu_info_details)
                 .setOngoing(true)
